@@ -166,4 +166,78 @@ The architecture can later support:
 - Jira integration
 - Slack integration
 - Cloud deployment
-- Team collaboration
+- Team collaboration 
+
+# Technology Stack
+
+## Frontend
+
+- React
+- TypeScript
+- Tailwind CSS
+
+**Why?**
+These technologies provide a modern, responsive, and easy-to-maintain user interface.
+
+---
+
+## Backend
+
+- Python
+- FastAPI
+
+**Why?**
+Python integrates well with AI technologies, while FastAPI provides fast, lightweight, and scalable APIs.
+
+---
+
+## Artificial Intelligence
+
+- OpenAI GPT-5.6 API
+
+**Why?**
+GPT-5.6 is responsible for understanding legacy code, identifying technical debt, and generating modernization recommendations.
+
+---
+
+## Database
+
+- SQLite
+
+**Why?**
+SQLite is lightweight, requires no separate server, and is perfect for a hackathon MVP.
+
+---
+
+## Version Control
+
+- Git
+- GitHub
+
+**Why?**
+Git tracks code changes, while GitHub provides collaboration and cloud-based version control.
+
+---
+
+## Development Tools
+
+- Visual Studio Code
+- OpenAI Codex
+- GitHub Copilot
+- Postman
+
+**Why?**
+These tools improve development speed, testing, debugging, and AI-assisted coding.
+
+---
+
+## Future Improvements
+
+As MOLTA grows, the technology stack can expand with:
+
+- PostgreSQL
+- Docker
+- Redis
+- Kubernetes
+- AWS
+- Azure
