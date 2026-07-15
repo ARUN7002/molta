@@ -1,141 +1,147 @@
-# MOLTA Development Roadmap
+# MOLTA - Development Roadmap
 
 ## Overview
 
-This roadmap outlines the planned development of MOLTA during OpenAI Build Week. The focus is to deliver a functional MVP within the available time while creating a strong foundation for future development.
+This roadmap explains how MOLTA will be built during OpenAI Build Week. The goal is to develop a working MVP within the hackathon timeline while creating a strong foundation for future improvements.
 
 ---
 
 # Day 1 – Project Setup ✅
 
-Completed:
+### Completed
 
-- Project idea finalized
-- Project structure created
-- Git repository initialized
-- GitHub repository connected
-- Development environment configured
-- Documentation structure created
+- Finalized the project idea
+- Created the project folder structure
+- Initialized the Git repository
+- Connected the project to GitHub
+- Set up the development environment
+- Created the initial documentation
+
+**Outcome**
+
+A clean and organized project ready for development.
 
 ---
 
-# Day 2 – System Design ✅
+# Day 2 – Planning and System Design ✅
 
-Completed:
+### Completed
 
-- Product Vision
-- Product Features
-- System Architecture
-- Technology Stack
-- Development Roadmap
-- Project Notes
+- Defined the product vision
+- Planned the MVP features
+- Designed the system architecture
+- Selected the technology stack
+- Created the development roadmap
+- Added project notes
 
-Goal:
+**Outcome**
 
-Create a complete engineering blueprint before writing application code.
+A clear development plan that will guide the implementation.
 
 ---
 
 # Day 3 – Backend Development
 
-Objectives:
+### Goals
 
-- Setup FastAPI project
-- Create API structure
+- Set up the FastAPI project
+- Create the backend folder structure
 - Configure project dependencies
-- Implement repository upload endpoint
-- Test backend APIs
+- Build the first API endpoints
+- Test the backend locally
 
-Deliverable:
+**Expected Outcome**
 
-A working backend server capable of receiving repository information.
+A working backend that is ready to receive repository information.
 
 ---
 
 # Day 4 – Frontend Development
 
-Objectives:
+### Goals
 
-- Setup React project
-- Build homepage
-- Create repository upload interface
-- Build dashboard layout
-- Connect frontend with backend APIs
+- Set up the React project
+- Build the homepage
+- Create the repository input page
+- Design the dashboard
+- Connect the frontend with the backend
 
-Deliverable:
+**Expected Outcome**
 
-A working user interface connected to the backend.
+A working user interface connected to the backend services.
 
 ---
 
 # Day 5 – AI Integration
 
-Objectives:
+### Goals
 
-- Integrate OpenAI GPT-5.6 API
+- Connect GPT-5.6
 - Analyze repository structure
-- Detect technical debt
-- Generate AI-powered insights
+- Explain important files
+- Identify technical debt
+- Generate AI-assisted insights
 
-Deliverable:
+**Expected Outcome**
 
 Basic AI-powered repository analysis.
 
 ---
 
-# Day 6 – Analysis Engine
+# Day 6 – Analysis and Reporting
 
-Objectives:
+### Goals
 
-- Security analysis
-- Performance analysis
+- Add security analysis
+- Add performance analysis
 - Generate modernization recommendations
-- Improve report quality
+- Improve the final report
 
-Deliverable:
+**Expected Outcome**
 
-Complete AI modernization report.
+A complete modernization report for the uploaded repository.
 
 ---
 
-# Day 7 – Finalization
+# Day 7 – Testing and Submission
 
-Objectives:
+### Goals
 
-- Testing
-- Bug fixing
-- Improve UI
+- Test the complete workflow
+- Fix bugs
+- Improve the user interface
 - Update documentation
-- Prepare demo
-- Submit to OpenAI Build Week
+- Record the demo video
+- Submit the project
 
-Deliverable:
+**Expected Outcome**
 
-A complete MVP ready for demonstration.
+A working MVP ready for OpenAI Build Week judging.
 
 ---
 
-# Future Roadmap
+# Future Improvements
 
-After the hackathon, MOLTA will continue to evolve with features such as:
+After the hackathon, future versions of MOLTA may include:
 
 - Multi-agent collaboration
 - Automatic pull request generation
 - CI/CD integration
+- Jira integration
+- Slack integration
 - Team collaboration
 - Cloud deployment
 - Enterprise dashboard
 - Project history
-- Jira and Slack integration
 
 ---
 
-# Success Criteria
+# MVP Success Criteria
 
-The MVP will be considered successful if it can:
+The first version of MOLTA will be considered successful if it can:
 
 - Accept a GitHub repository
-- Analyze the project structure
-- Generate AI-powered insights
+- Analyze the repository structure
+- Generate AI-assisted insights
 - Recommend modernization strategies
-- Present results through an easy-to-use interface
+- Display the results through a simple web interface
