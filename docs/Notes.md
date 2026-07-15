@@ -1,69 +1,77 @@
-# MOLTA Development Notes
+# MOLTA - Development Notes
 
 ## Purpose
 
-This document stores important ideas, decisions, observations, and future improvements made during the development of MOLTA.
+This document keeps track of important decisions, ideas, and lessons learned while building MOLTA during OpenAI Build Week.
 
-It acts as a working notebook for the engineering team.
+It serves as a reference throughout the development process and helps keep the project organized.
 
 ---
 
 # Project Decisions
 
-- The project name is currently **MOLTA** (temporary working name).
-- The project focuses on AI-powered software modernization.
-- The MVP will prioritize a complete user workflow instead of many unfinished features.
-- FastAPI was selected for backend development.
-- React with TypeScript was selected for the frontend.
-- SQLite will be used for the hackathon MVP.
+The following decisions have been made for the MVP:
+
+- The project name is **MOLTA**.
+- The project focuses on AI-assisted software modernization.
+- The first version will focus on a complete and working user workflow instead of trying to build too many features.
+- FastAPI has been selected for the backend.
+- React with TypeScript has been selected for the frontend.
+- SQLite will be used as the database for the MVP.
 
 ---
 
 # OpenAI Build Week Goals
 
-The objective is not only to build a working application but also to demonstrate how OpenAI models can solve real software engineering problems.
+The main goal is to build a working application that demonstrates how GPT-5.6 can help developers understand and modernize legacy software.
 
-The project should clearly showcase GPT-5.6 as the intelligence behind the analysis.
-
----
-
-# Design Principles
-
-- Keep the interface simple.
-- Keep the architecture modular.
-- Focus on code quality.
-- Build features incrementally.
-- Prioritize usability over unnecessary complexity.
+The project should clearly show how AI supports developers by providing useful analysis and practical recommendations.
 
 ---
 
-# Future Ideas
+# Development Principles
 
-Ideas that may be implemented after the hackathon:
+While building MOLTA, we will follow these principles:
+
+- Keep the interface simple and easy to use.
+- Build one feature at a time.
+- Focus on clean and maintainable code.
+- Keep the documentation updated.
+- Build a stable MVP before adding advanced features.
+
+---
+
+# Future Improvements
+
+These ideas are planned for future versions after the hackathon:
 
 - AI code refactoring
-- Automatic Pull Request generation
+- Automatic pull request generation
+- Multi-agent collaboration
 - CI/CD integration
 - Jira integration
 - Slack integration
 - Cloud deployment
-- Multi-agent collaboration
-- Enterprise dashboard
 - Team workspace
 - User authentication
-- Report export (PDF)
+- Export reports as PDF
 
 ---
 
 # Lessons Learned
 
-- Plan before coding.
-- Use Git frequently with meaningful commits.
-- Keep documentation updated.
-- Build a stable MVP before adding advanced features.
+Some important lessons during development:
+
+- Plan before writing code.
+- Use Git regularly with meaningful commits.
+- Keep documentation updated as the project grows.
+- Finish the core features before adding new ones.
+- Build something that works well instead of trying to build everything.
 
 ---
 
-# Reminder
+# Final Reminder
 
-The primary objective is to deliver a polished, functional MVP within the hackathon timeline.
+The priority for OpenAI Build Week is to deliver a working, well-tested, and easy-to-understand MVP.
+
+A simple project that works well is better than a complex project that is only partially finished.
