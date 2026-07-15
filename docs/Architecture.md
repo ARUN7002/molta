@@ -1,12 +1,12 @@
-# MOLTA Architecture
+# MOLTA - System Architecture
 
 ## Overview
 
-MOLTA follows a simple client-server architecture.
+MOLTA follows a simple client-server architecture designed for the OpenAI Build Week MVP.
 
-The user interacts with a web application built using React. The frontend communicates with a FastAPI backend through REST APIs. The backend analyzes repositories, interacts with OpenAI GPT-5.6 for AI-powered insights, and stores project information in a SQLite database.
+The frontend is built with React and communicates with a FastAPI backend through REST APIs. The backend is responsible for processing repository data, interacting with GPT-5.6 for AI-assisted analysis, and managing project information.
 
-This architecture keeps the system modular, scalable, and easy to maintain.
+This architecture is modular, easy to understand, and can be expanded as the project grows.
 
 ---
 
@@ -14,132 +14,112 @@ This architecture keeps the system modular, scalable, and easy to maintain.
 
 ## 1. Frontend
 
-Technology:
+**Technology**
+
 - React
 - TypeScript
 - Tailwind CSS
 
-Responsibilities:
-- User authentication (future)
-- Repository upload
-- Display analysis results
-- Show modernization report
-- Display project dashboard
+**Responsibilities**
+
+- Allow users to enter a GitHub repository
+- Display repository analysis
+- Show the modernization report
+- Present the project dashboard
+
+> User authentication is planned for a future version.
 
 ---
 
 ## 2. Backend
 
-Technology:
-- FastAPI
-- Python
+**Technology**
 
-Responsibilities:
-- Receive repository information
-- Process uploaded repositories
-- Manage API requests
+- Python
+- FastAPI
+
+**Responsibilities**
+
+- Receive API requests
+- Validate repository information
+- Coordinate the analysis process
 - Connect with AI services
-- Generate analysis results
+- Return results to the frontend
 
 ---
 
 ## 3. AI Analysis Engine
 
-Technology:
-- OpenAI GPT-5.6 API
+**Technology**
 
-Responsibilities:
+- OpenAI GPT-5.6
+
+**Responsibilities**
+
 - Understand legacy code
-- Detect technical debt
-- Explain code structure
-- Suggest modernization strategies
-- Generate documentation
+- Explain important files and modules
+- Identify technical debt
+- Generate modernization recommendations
 
 ---
 
 ## 4. Repository Analyzer
 
-Responsibilities:
-- Read project files
+**Responsibilities**
+
+- Read the repository structure
 - Detect programming languages
-- Analyze folder structure
-- Identify important components
-- Collect project statistics
+- Identify frameworks
+- Collect basic project information
 
 ---
 
-## 5. Security Analysis Module
+## 5. Security Analysis
 
-Responsibilities:
-- Detect common security risks
-- Identify outdated dependencies
-- Report potential vulnerabilities
+**Responsibilities**
+
+- Highlight possible security issues
+- Detect outdated dependencies
 - Suggest security improvements
 
 ---
 
-## 6. Performance Analysis Module
+## 6. Performance Analysis
 
-Responsibilities:
-- Identify inefficient code
-- Detect unnecessary complexity
-- Recommend optimization opportunities
+**Responsibilities**
+
+- Identify possible performance bottlenecks
+- Suggest optimization opportunities
 - Improve maintainability
 
 ---
 
 ## 7. Database
 
-Technology:
+**Technology**
+
 - SQLite
 
-Responsibilities:
+**Responsibilities**
+
 - Store project information
 - Save analysis history
 - Store generated reports
-- Manage application data
 
 ---
 
-# System Workflow
+# Planned System Workflow
 
-Step 1
-User uploads a GitHub repository.
+1. The user provides a GitHub repository.
+2. The frontend sends the request to the FastAPI backend.
+3. The backend prepares the repository for analysis.
+4. The Repository Analyzer collects project information.
+5. GPT-5.6 generates AI-assisted insights.
+6. Security and Performance Analysis modules add additional recommendations.
+7. Results are stored in SQLite.
+8. The frontend displays the complete report.
 
-↓
-
-Step 2
-Frontend sends the request to the FastAPI backend.
-
-↓
-
-Step 3
-Backend downloads and analyzes the repository.
-
-↓
-
-Step 4
-Repository Analyzer scans the project structure.
-
-↓
-
-Step 5
-AI Analysis Engine generates insights using GPT-5.6.
-
-↓
-
-Step 6
-Security and Performance modules perform additional analysis.
-
-↓
-
-Step 7
-Results are stored in the SQLite database.
-
-↓
-
-Step 8
-Frontend displays the complete modernization report.
+> This workflow represents the planned MVP architecture and will be implemented during OpenAI Build Week.
 
 ---
 
@@ -147,97 +127,38 @@ Frontend displays the complete modernization report.
 
 The architecture is designed to be:
 
+- Simple
 - Modular
-- Scalable
-- Maintainable
+- Easy to maintain
 - Easy to extend
-- AI-first
-- Suitable for future enterprise deployment
+- Suitable for AI-powered analysis
 
 ---
-
-# Future Expansion
-
-The architecture can later support:
-
-- Multi-agent collaboration
-- Pull request generation
-- CI/CD integration
-- Jira integration
-- Slack integration
-- Cloud deployment
-- Team collaboration 
 
 # Technology Stack
 
-## Frontend
-
-- React
-- TypeScript
-- Tailwind CSS
-
-**Why?**
-These technologies provide a modern, responsive, and easy-to-maintain user interface.
-
----
-
-## Backend
-
-- Python
-- FastAPI
-
-**Why?**
-Python integrates well with AI technologies, while FastAPI provides fast, lightweight, and scalable APIs.
+| Component | Technology |
+|----------|------------|
+| Frontend | React + TypeScript + Tailwind CSS |
+| Backend | FastAPI + Python |
+| AI | GPT-5.6 |
+| Database | SQLite |
+| Version Control | Git + GitHub |
+| Development Tools | VS Code, Codex, GitHub Copilot, Postman |
 
 ---
 
-## Artificial Intelligence
+# Future Improvements
 
-- OpenAI GPT-5.6 API
+As MOLTA continues to grow, future versions may include:
 
-**Why?**
-GPT-5.6 is responsible for understanding legacy code, identifying technical debt, and generating modernization recommendations.
-
----
-
-## Database
-
-- SQLite
-
-**Why?**
-SQLite is lightweight, requires no separate server, and is perfect for a hackathon MVP.
-
----
-
-## Version Control
-
-- Git
-- GitHub
-
-**Why?**
-Git tracks code changes, while GitHub provides collaboration and cloud-based version control.
-
----
-
-## Development Tools
-
-- Visual Studio Code
-- OpenAI Codex
-- GitHub Copilot
-- Postman
-
-**Why?**
-These tools improve development speed, testing, debugging, and AI-assisted coding.
-
----
-
-## Future Improvements
-
-As MOLTA grows, the technology stack can expand with:
-
+- Multi-agent collaboration
+- Automatic pull request generation
+- CI/CD integration
+- Jira integration
+- Slack integration
 - PostgreSQL
 - Docker
 - Redis
 - Kubernetes
-- AWS
-- Azure
+- Cloud deployment (AWS or Azure)
