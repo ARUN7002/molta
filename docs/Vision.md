@@ -2,86 +2,90 @@
 
 ## What is MOLTA?
 
-MOLTA is an AI-powered software engineering platform that helps developers and engineering teams understand, analyze, and modernize legacy software systems.
+MOLTA is an AI-powered platform that helps developers understand, analyze, and modernize legacy software systems.
 
-Instead of spending weeks manually studying large codebases, MOLTA provides intelligent insights into software architecture, technical debt, security risks, performance issues, and modernization opportunities. It helps teams make informed decisions before they begin rewriting or improving their applications.
+Instead of spending days or weeks exploring old codebases, developers can use MOLTA to get useful insights about the project, identify technical debt, detect possible security and performance issues, and receive a clear modernization plan.
+
+The goal is to make working with legacy software easier and faster.
 
 ---
 
 ## Why does MOLTA exist?
 
-Many organizations still depend on software that was built years or even decades ago. These systems are often difficult to understand because documentation is outdated, the original developers are no longer available, and the code has become increasingly complex over time.
+Many companies still rely on software that was built years ago. Over time, these projects become difficult to understand because documentation is outdated, the original developers may no longer be available, and the codebase keeps growing.
 
-Engineers spend a significant amount of time trying to understand existing systems before they can safely make changes. This slows development, increases costs, and introduces additional risks.
+Before making even a small change, developers often spend a lot of time understanding how the system works.
 
-MOLTA exists to reduce that complexity and help engineering teams understand their software faster, enabling modernization with greater confidence.
+MOLTA is being built to reduce that effort by helping developers understand their software more quickly and make confident decisions before starting modernization.
 
 ---
 
 ## Why now?
 
-Artificial Intelligence has reached a stage where it can understand programming languages, software architecture, and engineering patterns more effectively than ever before.
+Artificial Intelligence has improved rapidly in recent years. Modern AI models can understand programming languages, explain complex code, and help developers solve engineering problems more effectively.
 
-Modern AI models such as GPT-5.6 can analyze large codebases, explain complex logic, identify potential issues, and generate practical recommendations. This creates an opportunity to simplify software modernization in ways that were previously difficult or impossible.
+This makes it possible to build tools that support software modernization instead of relying only on manual analysis.
 
-As more organizations invest in digital transformation, the need for intelligent software modernization tools continues to grow.
+As more companies continue upgrading their software systems, the need for intelligent engineering tools is also increasing.
 
 ---
 
-## Who needs MOLTA?
+## Who is MOLTA for?
 
-MOLTA is designed for teams and organizations responsible for maintaining or improving existing software systems.
+MOLTA is designed for people who work with existing software systems.
 
-Primary users include:
+It can be useful for:
 
 - Software Engineers
 - Engineering Managers
 - Technical Leads
 - DevOps Engineers
 - Solution Architects
-- Chief Technology Officers (CTOs)
-- Enterprises maintaining legacy applications
+- CTOs
+- Organizations maintaining legacy software
 
 ---
 
 ## What problem does MOLTA solve?
 
-Modernizing legacy software is often slow, expensive, and risky.
+Understanding a legacy codebase is usually the hardest part of modernization.
 
-Engineering teams commonly face challenges such as:
+Developers often spend a lot of time trying to understand unfamiliar code before they can safely improve it.
 
-- Understanding unfamiliar codebases
-- Identifying technical debt
-- Detecting security vulnerabilities
-- Finding performance bottlenecks
-- Planning safe modernization strategies
-- Lack of updated documentation
+Some common challenges include:
 
-MOLTA brings these tasks together into a single AI-assisted workflow, helping teams save time and make better engineering decisions.
+- Understanding large codebases
+- Finding technical debt
+- Identifying possible security issues
+- Detecting performance bottlenecks
+- Planning modernization
+- Working with outdated or missing documentation
+
+MOLTA brings these tasks together into one platform to help developers save time and make better engineering decisions.
 
 ---
 
 ## Why is AI the right solution?
 
-Software systems contain thousands of interconnected files, functions, and dependencies. Manually analyzing them requires significant engineering effort.
+Modern software projects can contain thousands of files and complex dependencies. Reviewing everything manually takes a lot of time.
 
-AI can process large amounts of code, recognize patterns, summarize complex logic, and provide actionable recommendations within minutes.
+AI can analyze large codebases, recognize patterns, explain difficult code, and generate practical suggestions much faster.
 
-Instead of replacing developers, MOLTA acts as an intelligent engineering assistant that helps teams:
+MOLTA is not designed to replace developers. Instead, it acts as an AI engineering assistant that helps teams:
 
-- Understand software architecture
+- Understand project architecture
 - Detect technical debt
-- Identify security concerns
+- Highlight possible security concerns
 - Suggest performance improvements
 - Recommend modernization strategies
-- Generate clear documentation
+- Generate useful documentation
 
-This allows engineers to spend more time building solutions and less time understanding existing code.
+The final decisions always remain with the developer.
 
 ---
 
 ## Vision Statement
 
-Our vision is to make software modernization faster, safer, and more accessible by combining artificial intelligence with practical software engineering principles.
+Our vision is to make software modernization simpler, faster, and more accessible for every development team.
 
-MOLTA aims to become a trusted engineering platform that helps organizations confidently evolve their software systems while reducing complexity, cost, and development time.
+By combining AI with practical software engineering, MOLTA aims to help organizations understand their existing software, reduce development effort, and modernize their applications with greater confidence.
