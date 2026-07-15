@@ -2,129 +2,109 @@
 
 ## Product Scope
 
-MOLTA is designed to help software teams understand, analyze, and modernize legacy codebases using AI. To keep the project focused for OpenAI Build Week, the features are divided into three categories.
+MOLTA is being developed to help developers understand, analyze, and modernize legacy software systems using AI.
+
+To keep the project focused during OpenAI Build Week, the features are divided into three categories: Current MVP, Additional Features, and Future Improvements.
 
 ---
 
-# Must Have Features
+# Current MVP Features
 
-These are the core features required for the Minimum Viable Product (MVP). Without these features, MOLTA is incomplete.
+These are the core features planned for the first working version of MOLTA.
 
 ## 1. Repository Upload
 
-- Upload a GitHub repository using its URL.
-- Clone the repository for analysis.
-- Prepare the project for processing.
+- Accept a public GitHub repository URL.
+- Prepare the repository for analysis.
+- Validate the repository before processing.
 
 ---
 
 ## 2. Repository Analysis
 
-- Scan the project structure.
+- Analyze the overall project structure.
 - Identify programming languages and frameworks.
-- Generate an overview of the codebase.
+- Generate a simple overview of the repository.
 
 ---
 
 ## 3. AI Code Analysis
 
-- Analyze the repository using GPT-5.6.
-- Detect technical debt and outdated code.
+- Use GPT-5.6 to analyze the repository.
+- Identify technical debt and outdated code.
 - Explain the purpose of important files and modules.
 
 ---
 
-## 4. Modernization Plan
+## 4. AI Modernization Plan
 
-- Generate a step-by-step modernization roadmap.
-- Recommend better technologies and best practices.
-- Suggest improvements for long-term maintenance.
-
----
-
-# Nice to Have Features
-
-These features improve the product but are not required for the hackathon MVP.
-
-## 1. Security Analysis
-
-- Detect common security risks.
-- Identify hardcoded secrets and unsafe coding practices.
-- Recommend security improvements.
+- Generate a step-by-step modernization plan.
+- Recommend better development practices.
+- Suggest possible improvements for long-term maintenance.
 
 ---
 
-## 2. Performance Analysis
+# Additional Features
 
-- Identify inefficient code.
+These features will be added if time allows during the hackathon.
+
+## Security Analysis
+
+- Highlight possible security issues.
+- Detect hardcoded secrets and unsafe coding practices.
+- Suggest security improvements.
+
+---
+
+## Performance Analysis
+
+- Identify possible performance bottlenecks.
 - Suggest optimization opportunities.
-- Recommend performance improvements.
+- Recommend improvements for better efficiency.
 
 ---
 
-## 3. Architecture Visualization
+## Architecture Visualization
 
 - Display the project structure visually.
-- Show relationships between different modules.
-- Help developers understand the application quickly.
+- Show how different modules are connected.
+- Help developers understand the application faster.
 
 ---
 
-## 4. Cost Estimation
+## Modernization Effort Estimation
 
-- Estimate the effort required for modernization.
-- Predict approximate development time.
-- Provide a high-level project estimation.
-
----
-
-# Future Vision
-
-These features are planned after the hackathon to make MOLTA a complete AI software engineering platform.
-
-## Multi-Agent Collaboration
-
-Different AI agents working together for analysis, planning, testing, and modernization.
+- Estimate the overall modernization effort.
+- Provide an approximate development timeline.
+- Help teams plan future work.
 
 ---
 
-## Automatic Pull Request Generation
+# Future Improvements
 
-Generate clean pull requests with AI-generated improvements.
+These ideas are planned after the hackathon and are not part of the initial MVP.
 
----
-
-## CI/CD Integration
-
-Connect with GitHub Actions and other deployment pipelines for automated modernization.
-
----
-
-## Jira Integration
-
-Create modernization tasks automatically in Jira.
-
----
-
-## Slack Integration
-
-Send project analysis and modernization updates directly to Slack channels.
+- Multi-agent collaboration
+- Automatic pull request generation
+- CI/CD integration
+- Jira integration
+- Slack integration
 
 ---
 
 # MVP Summary
 
-The OpenAI Build Week version of MOLTA will focus on four core capabilities:
+The first version of MOLTA focuses on four main capabilities:
 
 - Repository Upload
 - Repository Analysis
 - AI Code Analysis
 - AI Modernization Plan
 
-These features provide a complete workflow while keeping the project achievable within the hackathon timeline.
+These features create a complete workflow while keeping the project achievable within the Build Week timeline.
 
 ---
 
 # Goal
 
-The goal of MOLTA is to reduce the time developers spend understanding legacy software by providing AI-powered analysis and a clear modernization strategy.
+The goal of MOLTA is to help developers spend less time understanding legacy software and more time improving it by providing AI-assisted analysis and practical modernization recommendations.
