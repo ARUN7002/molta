@@ -51,12 +51,17 @@ function App() {
 
         <div className="mt-10">
           <input
-            type="text"
-            value={repository}
-            onChange={(e) => setRepository(e.target.value)}
-            placeholder="Paste your GitHub repository URL..."
-            className="w-full rounded-xl border border-slate-700 bg-slate-900 p-4 text-white outline-none focus:border-blue-500"
-          />
+  type="text"
+  value={repository}
+  onChange={(e) => setRepository(e.target.value)}
+  onKeyDown={(e) => {
+    if (e.key === "Enter") {
+      analyzeRepository();
+    }
+  }}
+  placeholder="Paste your GitHub repository URL..."
+  className="w-full rounded-xl border border-slate-700 bg-slate-900 p-4 text-white outline-none focus:border-blue-500"
+/>
         </div>
 
         <button
