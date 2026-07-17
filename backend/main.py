@@ -2,10 +2,13 @@ from pydantic import BaseModel
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import re
-import requests
+
+from github_utils import get_repository_metadata, get_repository_contents
+
 
 class RepositoryRequest(BaseModel):
     repository: str
+
 
 app = FastAPI()
 
@@ -48,7 +51,7 @@ def analyze(data: RepositoryRequest):
     # Remove trailing slash
     repo = repo.rstrip("/")
 
-    # Convert GitHub URL to GitHub API URL
+    # Convert GitHub URL into GitHub API URL
     api_url = repo.replace(
         "https://github.com/",
         "https://api.github.com/repos/"
@@ -57,29 +60,23 @@ def analyze(data: RepositoryRequest):
     # -----------------------------
     # Repository Metadata
     # -----------------------------
-    response = requests.get(api_url)
+    repo_data = get_repository_metadata(api_url)
 
-    if response.status_code != 200:
+    if repo_data is None:
         return {
             "success": False,
             "message": "Repository not found."
         }
 
-    repo_data = response.json()
-
     # -----------------------------
     # Repository Contents
     # -----------------------------
-    contents_url = api_url + "/contents"
-
-    contents_response = requests.get(contents_url)
+    contents = get_repository_contents(api_url)
 
     project_structure = []
     frameworks = []
 
-    if contents_response.status_code == 200:
-
-        contents = contents_response.json()
+    if contents:
 
         # Build project structure
         for item in contents:
