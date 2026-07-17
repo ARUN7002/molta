@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import re
 import requests
+
 class RepositoryRequest(BaseModel):
     repository: str
 
@@ -47,7 +48,7 @@ def analyze(data: RepositoryRequest):
     # Remove trailing slash
     repo = repo.rstrip("/")
 
-    # Convert GitHub URL into GitHub API URL
+    # Convert GitHub URL to GitHub API URL
     api_url = repo.replace(
         "https://github.com/",
         "https://api.github.com/repos/"
@@ -74,17 +75,51 @@ def analyze(data: RepositoryRequest):
     contents_response = requests.get(contents_url)
 
     project_structure = []
+    frameworks = []
 
     if contents_response.status_code == 200:
 
         contents = contents_response.json()
 
+        # Build project structure
         for item in contents:
-
             if item["type"] == "dir":
-                project_structure.append(item["name"] + "/")
+                project_structure.append(f'{item["name"]}/')
             else:
                 project_structure.append(item["name"])
+
+        # Detect technologies from filenames
+        filenames = [item["name"] for item in contents]
+
+        if "package.json" in filenames:
+            frameworks.append("Node.js")
+
+        if "vite.config.ts" in filenames or "vite.config.js" in filenames:
+            frameworks.append("Vite")
+
+        if "requirements.txt" in filenames:
+            frameworks.append("Python")
+
+        if "Dockerfile" in filenames:
+            frameworks.append("Docker")
+
+        if "docker-compose.yml" in filenames:
+            frameworks.append("Docker Compose")
+
+        if "README.md" in filenames:
+            frameworks.append("README Available")
+
+        if "pom.xml" in filenames:
+            frameworks.append("Maven / Spring Boot")
+
+        if "Cargo.toml" in filenames:
+            frameworks.append("Rust")
+
+        if "build.gradle" in filenames:
+            frameworks.append("Gradle")
+
+        if "composer.json" in filenames:
+            frameworks.append("Laravel / PHP")
 
     # -----------------------------
     # Return Result
@@ -96,5 +131,6 @@ def analyze(data: RepositoryRequest):
         "owner": repo_data["owner"]["login"],
         "stars": repo_data["stargazers_count"],
         "language": repo_data["language"],
-        "project_structure": project_structure
+        "project_structure": project_structure,
+        "frameworks": frameworks
     }
