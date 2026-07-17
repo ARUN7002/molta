@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import re
 
-from github_utils import get_repository_metadata, get_repository_contents
+from github_utils import get_repository_metadata, get_all_repository_files
 
 
 class RepositoryRequest(BaseModel):
@@ -71,52 +71,51 @@ def analyze(data: RepositoryRequest):
     # -----------------------------
     # Repository Contents
     # -----------------------------
-    contents = get_repository_contents(api_url)
+    contents = get_all_repository_files(api_url)
 
     project_structure = []
     frameworks = []
 
-    if contents:
+    # Build complete project structure
+    for item in contents:
 
-        # Build project structure
-        for item in contents:
-            if item["type"] == "dir":
-                project_structure.append(f'{item["name"]}/')
-            else:
-                project_structure.append(item["name"])
+        if item["type"] == "dir":
+            project_structure.append(item["path"] + "/")
+        else:
+            project_structure.append(item["path"])
 
-        # Detect technologies from filenames
-        filenames = [item["name"] for item in contents]
+    # Detect technologies
+    filenames = [item["name"] for item in contents]
 
-        if "package.json" in filenames:
-            frameworks.append("Node.js")
+    if "package.json" in filenames:
+        frameworks.append("Node.js")
 
-        if "vite.config.ts" in filenames or "vite.config.js" in filenames:
-            frameworks.append("Vite")
+    if "vite.config.ts" in filenames or "vite.config.js" in filenames:
+        frameworks.append("Vite")
 
-        if "requirements.txt" in filenames:
-            frameworks.append("Python")
+    if "requirements.txt" in filenames:
+        frameworks.append("Python")
 
-        if "Dockerfile" in filenames:
-            frameworks.append("Docker")
+    if "Dockerfile" in filenames:
+        frameworks.append("Docker")
 
-        if "docker-compose.yml" in filenames:
-            frameworks.append("Docker Compose")
+    if "docker-compose.yml" in filenames:
+        frameworks.append("Docker Compose")
 
-        if "README.md" in filenames:
-            frameworks.append("README Available")
+    if "README.md" in filenames:
+        frameworks.append("README Available")
 
-        if "pom.xml" in filenames:
-            frameworks.append("Maven / Spring Boot")
+    if "pom.xml" in filenames:
+        frameworks.append("Maven / Spring Boot")
 
-        if "Cargo.toml" in filenames:
-            frameworks.append("Rust")
+    if "Cargo.toml" in filenames:
+        frameworks.append("Rust")
 
-        if "build.gradle" in filenames:
-            frameworks.append("Gradle")
+    if "build.gradle" in filenames:
+        frameworks.append("Gradle")
 
-        if "composer.json" in filenames:
-            frameworks.append("Laravel / PHP")
+    if "composer.json" in filenames:
+        frameworks.append("Laravel / PHP")
 
     # -----------------------------
     # Return Result

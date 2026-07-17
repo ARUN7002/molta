@@ -27,3 +27,29 @@ def get_repository_contents(api_url, path=""):
         return []
 
     return response.json()
+
+
+def get_all_repository_files(api_url, path=""):
+    """
+    Recursively traverse every folder in a GitHub repository.
+    Returns every file and folder.
+    """
+
+    all_items = []
+
+    contents = get_repository_contents(api_url, path)
+
+    for item in contents:
+
+        all_items.append(item)
+
+        if item["type"] == "dir":
+
+            sub_items = get_all_repository_files(
+                api_url,
+                item["path"]
+            )
+
+            all_items.extend(sub_items)
+
+    return all_items
