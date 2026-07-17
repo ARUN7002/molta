@@ -7,7 +7,14 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   const analyzeRepository = async () => {
+    // Prevent empty input
+    if (!repository.trim()) {
+      setResult("⚠️ Please enter a GitHub repository URL.");
+      return;
+    }
+
     setLoading(true);
+    setResult("");
 
     try {
       const response = await fetch("http://127.0.0.1:8000/analyze", {
@@ -22,9 +29,23 @@ function App() {
 
       const data = await response.json();
 
-      setResult(data.message);
+      if (data.success) {
+        setResult(
+`✅ ${data.message}
+
+📦 Repository: ${data.name}
+
+👤 Owner: ${data.owner}
+
+💻 Language: ${data.language || "Not detected"}
+
+⭐ Stars: ${data.stars}`
+        );
+      } else {
+        setResult(`❌ ${data.message}`);
+      }
     } catch (error) {
-      setResult("Failed to connect to backend.");
+      setResult("❌ Failed to connect to backend.");
     }
 
     setLoading(false);
@@ -51,28 +72,29 @@ function App() {
 
         <div className="mt-10">
           <input
-  type="text"
-  value={repository}
-  onChange={(e) => setRepository(e.target.value)}
-  onKeyDown={(e) => {
-    if (e.key === "Enter") {
-      analyzeRepository();
-    }
-  }}
-  placeholder="Paste your GitHub repository URL..."
-  className="w-full rounded-xl border border-slate-700 bg-slate-900 p-4 text-white outline-none focus:border-blue-500"
-/>
+            type="text"
+            value={repository}
+            onChange={(e) => setRepository(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                analyzeRepository();
+              }
+            }}
+            placeholder="Paste your GitHub repository URL..."
+            className="w-full rounded-xl border border-slate-700 bg-slate-900 p-4 text-white outline-none focus:border-blue-500"
+          />
         </div>
 
         <button
           onClick={analyzeRepository}
-          className="mt-6 rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white transition hover:bg-blue-700"
+          disabled={loading}
+          className="mt-6 rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white transition hover:bg-blue-700 disabled:bg-blue-400 disabled:cursor-not-allowed"
         >
-          {loading ? "Analyzing..." : "Analyze Repository"}
+          {loading ? "⏳ Analyzing..." : "Analyze Repository"}
         </button>
 
         {result && (
-          <div className="mt-8 rounded-xl bg-slate-900 p-4 text-cyan-400">
+          <div className="mt-8 whitespace-pre-line rounded-xl bg-slate-900 p-6 text-left text-cyan-400 border border-slate-700">
             {result}
           </div>
         )}
